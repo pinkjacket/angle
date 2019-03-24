@@ -11,6 +11,12 @@ function love.update(dt)
   mouse_x, mouse_y = love.mouse.getPosition()
   
   angle = math.atan2(mouse_y - circle.y, mouse_x - circle.x)
+  
+  cos = math.cos(angle)
+  sin = math.sin(angle)
+  
+  circle.x = circle.x + circle.speed * cos * dt
+  circle.y = circle.y + circle.speed * sin * dt
 end
 
 function love.draw()
